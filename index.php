@@ -3,6 +3,7 @@
 <head>
     <title>Gambling room</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="x-icon" href="slike/icon.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
