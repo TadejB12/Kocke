@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.swal-footer {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+#hidden{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: 4.5vw;
+    top: 47vh;
+}
+
+
+/* Body with a subtle overlay for readability */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(../slike/ozadje.png) no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Header styling */
+#Header {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 20px 0;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+#Header h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Main wrapper */
+#wrapper {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#playerContainer{
+    width: 100%;
+}
+/* Shared input block */
+.players, .gameStats{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* aligns labels to the left */
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    border: 1px solid #ddd;
+    gap: 10px; /* spacing between label and input/select */
+    border-left: 5px solid #E30101; /* accent stripe */
+}
+
+.players:hover, .gameStats:hover {
+    transform: translateY(-3px) scale(1.05);
+    background-color: #eaeaea; /* subtle hover difference */
+}
+
+.player-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+    border-left: 5px solid #E30101;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.player-controls:hover {
+    transform: translateY(-3px) scale(1.02);
+    background-color: #eaeaea;
+}
+
+.player-controls button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #E30101;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.player-controls button:hover {
+    background-color: #aa0707;
+    transform: scale(1.05);
+}
+
+.player-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Form labels and inputs */
+label {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+input[type="text"]:hover,
+select:hover,
+input[type="text"]:focus,
+select:focus {
+    border-color: #E30101;
+    box-shadow: 0 0 8px rgba(227, 1, 1, 0.3);
+    outline: none;
+}
+
+/* Flex layout for select group */
+.gameStats {
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Start button */
+#start {
+    width: 100%;
+    padding: 12px;
+    background-color: #E30101;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#start:hover {
+    background-color: #aa0707;
+    transform: scale(1.02);
+}
+
+#musicToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #E30101;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+
+#musicToggle:hover {
+    background-color: #aa0707;
+    transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    #Header h1 {
+        font-size: 2em;
+    }
+
+    #wrapper {
+        padding: 20px;
+    }
+
+    .players, .gameStats {
+        padding: 15px;
+    }
+
+    input, select {
+        font-size: 1em;
+    }
+
+    #start {
+        font-size: 1em;
+    }
+    #musicToggle {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
